@@ -1,0 +1,36 @@
+﻿<Window x:Class="OCR.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OCR"
+        mc:Ignorable="d"
+        Title="OCR" Height="796" Width="1144">
+    <Grid Background="#FF2D2D30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="145*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Grid.Row="0" Content="Открыть" Foreground="White" Background="#FF2D2D30" HorizontalAlignment="Left" Margin="0,2,0,0" Height="38" AutomationProperties.Name="Open" Width="140" Click="Button_Click" FontFamily="Times New Roman" FontSize="14"  >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.819"/>
+                    <RotateTransform Angle="0.222"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBlock x:Name = "PathOpen"  Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Width="426" Foreground="#FFF7F5F5" FontFamily="Times New Roman" FontSize="16" TextAlignment="Center" />
+        <Image  Grid.Column="0" Grid.Row="1" x:Name="image">
+            
+        </Image>
+        <CheckBox IsChecked="{x:Null}" x:Name = "cbNoise"  Content="Подавление шумов" Grid.Column="1" HorizontalAlignment="Left" Margin="33,25,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" FontFamily="Times New Roman" Foreground="#FFFBFBFB" />
+        <CheckBox IsChecked="{x:Null}" x:Name = "cbConvertGray" Content="Преобразование текста в серый цвет" Grid.Column="1" HorizontalAlignment="Left" Margin="33,65,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="14" Foreground="#FFFDF8F8"/>
+        <CheckBox IsChecked="{x:Null}" x:Name = "cbConvertWB" Content="Преобразование в черно - белое" Grid.Column="1" HorizontalAlignment="Left" Margin="33,105,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="#FFFDFBFB"/>
+    </Grid>
+</Window>
